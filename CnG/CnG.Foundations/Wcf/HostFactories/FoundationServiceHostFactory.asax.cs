@@ -4,15 +4,15 @@ using System.ServiceModel.Activation;
 using CnG.Foundations.Ioc;
 using Microsoft.Practices.Unity;
 
-namespace CnG.Foundations.Wcf.Behaviors.Ioc
+namespace CnG.Foundations.Wcf.HostFactories
 {
-	public abstract class DependencyInjectionServiceHostFactory : ServiceHostFactory
+	public abstract class FoundationServiceHostFactory : ServiceHostFactory
 	{
 		/// <summary>
-		/// Creates a <see cref="DependencyInjectionServiceHost"/> for a specified type of service with a specific base address. 
+		/// Creates a <see cref="FoundationServiceHost"/> for a specified type of service with a specific base address. 
 		/// </summary>
 		/// <returns>
-		/// A <see cref="DependencyInjectionServiceHost"/> for the type of service specified with a specific base address.
+		/// A <see cref="FoundationServiceHost"/> for the type of service specified with a specific base address.
 		/// </returns>
 		/// <param name="serviceType">
 		/// Specifies the type of service to host. 
@@ -26,7 +26,7 @@ namespace CnG.Foundations.Wcf.Behaviors.Ioc
 			DependencyFactory.Container.RegisterType(serviceType);
 
 			RegisterDependencies();
-			return new DependencyInjectionServiceHost(serviceType, baseAddresses);
+			return new FoundationServiceHost(serviceType, baseAddresses);
 		}
 
 		/// <summary>

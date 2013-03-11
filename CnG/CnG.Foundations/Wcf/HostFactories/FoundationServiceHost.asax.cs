@@ -1,17 +1,18 @@
 using System;
 using System.ServiceModel;
+using CnG.Foundations.Wcf.Behaviors.Ioc;
 using CnG.Foundations.Wcf.Behaviors.Persistence;
 
-namespace CnG.Foundations.Wcf.Behaviors.Ioc
+namespace CnG.Foundations.Wcf.HostFactories
 {
-    public class DependencyInjectionServiceHost : ServiceHost
+    public class FoundationServiceHost : ServiceHost
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DependencyInjectionServiceHost"/> class.
+        /// Initializes a new instance of the <see cref="FoundationServiceHost"/> class.
         /// </summary>
         /// <param name="serviceType">Type of the service.</param>
         /// <param name="baseAddresses">The base addresses.</param>
-        public DependencyInjectionServiceHost(Type serviceType, Uri[] baseAddresses)
+        public FoundationServiceHost(Type serviceType, Uri[] baseAddresses)
             : base(serviceType, baseAddresses)
         { }
 

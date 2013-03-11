@@ -77,8 +77,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wcf\Behaviors\Ioc\DependencyInjectionInstanceProvider.asax.cs" />
     <Compile Include="Wcf\Behaviors\Ioc\DependencyInjectionServiceBehavior.asax.cs" />
-    <Compile Include="Wcf\Behaviors\Ioc\DependencyInjectionServiceHost.asax.cs" />
-    <Compile Include="Wcf\Behaviors\Ioc\DependencyInjectionServiceHostFactory.asax.cs" />
+    <Compile Include="Wcf\HostFactories\FoundationServiceHost.asax.cs" />
+    <Compile Include="Wcf\HostFactories\FoundationServiceHostFactory.asax.cs" />
     <Compile Include="Wcf\Behaviors\Persistence\UnitOfWorkCallContextInitializer.cs" />
     <Compile Include="Wcf\Behaviors\Persistence\UnitOfWorkEndpointBehaviorAttribute.cs" />
   </ItemGroup>
