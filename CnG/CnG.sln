@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{49
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9ACAA293-339C-4FB3-A3C6-3CBC6987051A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CnG.Domain.Model.Mappings", "CnG.Domain.Model.Mappings\CnG.Domain.Model.Mappings.csproj", "{408ADA76-EAFE-4C17-89E2-3EBA9F1073AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{6297FEC2-A50D-4FAA-B806-AE6FC12574B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6297FEC2-A50D-4FAA-B806-AE6FC12574B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6297FEC2-A50D-4FAA-B806-AE6FC12574B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{408ADA76-EAFE-4C17-89E2-3EBA9F1073AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{408ADA76-EAFE-4C17-89E2-3EBA9F1073AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{408ADA76-EAFE-4C17-89E2-3EBA9F1073AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{408ADA76-EAFE-4C17-89E2-3EBA9F1073AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,8 +58,12 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{03DBD192-98DB-4BC1-9CB6-6FC8ABA3BA53} = {98C10DD3-BBB2-41A7-90B2-7B43ED38DD79}
 		{6297FEC2-A50D-4FAA-B806-AE6FC12574B7} = {0D24479F-C53C-4A67-848A-5BB126F07458}
+		{408ADA76-EAFE-4C17-89E2-3EBA9F1073AA} = {0D24479F-C53C-4A67-848A-5BB126F07458}
 		{A8B22257-8BAA-42B1-8C8D-276305987A77} = {498D2A68-50E8-4233-9762-3554E0B0D52C}
 		{8B3F401B-ED43-4C92-83F0-83798A02F43D} = {498D2A68-50E8-4233-9762-3554E0B0D52C}
 		{ECADC657-A6A1-4753-973E-B5A5E747B42A} = {9ACAA293-339C-4FB3-A3C6-3CBC6987051A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35;packages\Unity.Interception.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal

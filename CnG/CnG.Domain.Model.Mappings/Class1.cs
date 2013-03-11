@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CnG.Foundations
+namespace CnG.Domain.Model.Mappings
 {
     public class Class1
     {
