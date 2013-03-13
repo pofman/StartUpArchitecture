@@ -45,7 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\BaseEntityTypeConfiguration.cs" />
-    <Compile Include="MembershípConfiguration.cs" />
+    <Compile Include="MembershipConfiguration.cs" />
     <Compile Include="UserConfiguration.cs" />
     <Compile Include="Contexts\ContextFactory.cs" />
     <Compile Include="Contexts\DbInit.cs" />
