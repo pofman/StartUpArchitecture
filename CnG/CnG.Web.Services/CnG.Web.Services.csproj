@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="Configurations\CnGServiceHostFactory.cs" />
     <Compile Include="Configurations\WcfExecutionContext.cs" />
+    <Compile Include="Configurations\WcfOperationContext.cs" />
     <Compile Include="Configurations\WcfUnityRegistry.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -104,6 +105,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CnG.Domain.Model.Mappings\CnG.Domain.Model.Mappings.csproj">
+      <Project>{408ADA76-EAFE-4C17-89E2-3EBA9F1073AA}</Project>
+      <Name>CnG.Domain.Model.Mappings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CnG.Domain.Model\CnG.Domain.Model.csproj">
+      <Project>{6297FEC2-A50D-4FAA-B806-AE6FC12574B7}</Project>
+      <Name>CnG.Domain.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CnG.Foundations\CnG.Foundations.csproj">
       <Project>{03DBD192-98DB-4BC1-9CB6-6FC8ABA3BA53}</Project>
       <Name>CnG.Foundations</Name>

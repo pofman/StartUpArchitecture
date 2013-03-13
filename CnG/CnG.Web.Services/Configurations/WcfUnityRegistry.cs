@@ -1,3 +1,4 @@
+using CnG.Domain.Model.Mappings.Contexts;
 using CnG.Foundations.Persistence;
 using CnG.Services.Contracts;
 using UnityConfiguration;
@@ -13,6 +14,7 @@ namespace CnG.Web.Services.Configurations
                     scan.AssemblyContaining<IUserService>();
                     scan.AssemblyContaining<WcfExecutionContext>();
                     scan.AssemblyContaining<IUnitOfWork>();
+                    scan.AssemblyContaining<ContextFactory>();
                     scan.ForRegistries();
                     scan.With<FirstInterfaceConvention>();
                     //scan.With<AddAllConvention>()

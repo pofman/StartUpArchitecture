@@ -1,7 +1,7 @@
 ﻿namespace CnG.Foundations.Persistence
 {
-	public interface IContextFactory
-	{
-		IPersistenceContext Create();
-	}
+    public interface IContextFactory
+    {
+        IPersistenceContext Create();
+    }
 }

@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="CnG.Web.Services.UserService" CodeBehind="UserService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CnG.Web.Services.UserService" CodeBehind="UserService.svc.cs" Factory="CnG.Web.Services.Configurations.CnGServiceHostFactory" %>

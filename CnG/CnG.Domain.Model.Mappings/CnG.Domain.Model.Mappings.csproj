@@ -30,8 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Contexts\BaseEntityTypeConfiguration.cs" />
+    <Compile Include="MembershípConfiguration.cs" />
+    <Compile Include="UserConfiguration.cs" />
+    <Compile Include="Contexts\ContextFactory.cs" />
+    <Compile Include="Contexts\DbInit.cs" />
+    <Compile Include="Contexts\EfContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CnG.Domain.Model\CnG.Domain.Model.csproj">
+      <Project>{6297FEC2-A50D-4FAA-B806-AE6FC12574B7}</Project>
+      <Name>CnG.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CnG.Foundations\CnG.Foundations.csproj">
+      <Project>{03DBD192-98DB-4BC1-9CB6-6FC8ABA3BA53}</Project>
+      <Name>CnG.Foundations</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

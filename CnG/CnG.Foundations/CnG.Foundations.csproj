@@ -65,12 +65,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Entity.cs" />
     <Compile Include="Ioc\DependencyFactory.cs" />
     <Compile Include="Contexts\IExecutionContext.cs" />
     <Compile Include="Mvc\BaseController.cs" />
+    <Compile Include="Persistence\EfRepository.cs" />
     <Compile Include="Persistence\EfUnitOfWork.cs" />
     <Compile Include="Persistence\IContextFactory.cs" />
     <Compile Include="Persistence\IPersistenceContext.cs" />
+    <Compile Include="Persistence\IRepository.cs" />
     <Compile Include="Persistence\IUnitOfWork.cs" />
     <Compile Include="Persistence\IUnitOfWorkFactory.cs" />
     <Compile Include="Persistence\UnitOfWorkFactory.cs" />
@@ -81,6 +84,7 @@
     <Compile Include="Wcf\HostFactories\FoundationServiceHostFactory.cs" />
     <Compile Include="Wcf\Behaviors\Persistence\UnitOfWorkCallContextInitializer.cs" />
     <Compile Include="Wcf\Behaviors\Persistence\UnitOfWorkEndpointBehaviorAttribute.cs" />
+    <Compile Include="Wcf\ServiceInovker.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
