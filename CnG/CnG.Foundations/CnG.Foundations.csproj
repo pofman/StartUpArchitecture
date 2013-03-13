@@ -75,10 +75,10 @@
     <Compile Include="Persistence\IUnitOfWorkFactory.cs" />
     <Compile Include="Persistence\UnitOfWorkFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Wcf\Behaviors\Ioc\DependencyInjectionInstanceProvider.asax.cs" />
-    <Compile Include="Wcf\Behaviors\Ioc\DependencyInjectionServiceBehavior.asax.cs" />
-    <Compile Include="Wcf\HostFactories\FoundationServiceHost.asax.cs" />
-    <Compile Include="Wcf\HostFactories\FoundationServiceHostFactory.asax.cs" />
+    <Compile Include="Wcf\Behaviors\Ioc\DependencyInjectionInstanceProvider.cs" />
+    <Compile Include="Wcf\Behaviors\Ioc\DependencyInjectionServiceBehavior.cs" />
+    <Compile Include="Wcf\HostFactories\FoundationServiceHost.cs" />
+    <Compile Include="Wcf\HostFactories\FoundationServiceHostFactory.cs" />
     <Compile Include="Wcf\Behaviors\Persistence\UnitOfWorkCallContextInitializer.cs" />
     <Compile Include="Wcf\Behaviors\Persistence\UnitOfWorkEndpointBehaviorAttribute.cs" />
   </ItemGroup>
