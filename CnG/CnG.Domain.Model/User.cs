@@ -6,23 +6,13 @@ namespace CnG.Domain.Model
     {
         [Required]
         [MaxLength(250)]
-        public virtual string Name { get; set; }
+        public virtual string FirstName { get; set; }
+
+        [Required]
+        [MaxLength(250)]
+        public virtual string LastName { get; set; }
 
         [Required]
         public virtual Membership Membership { get; set; }
-    }
-
-    public class Membership : Entity
-    {
-        [Required]
-        [MaxLength(100)]
-        public virtual string  UserName { get; set; }
-        
-        [Required]
-        [MaxLength(15)]
-        public virtual string Password { get; set; }
-
-        [Required]
-        public virtual User User { get; set; }
     }
 }

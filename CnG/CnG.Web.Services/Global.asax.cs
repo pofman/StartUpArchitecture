@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Web;
+using AutoMapper;
+using CnG.Domain.Model;
+using CnG.Services.Contracts.Dtos;
 
 namespace CnG.Web.Services
 {
@@ -8,7 +11,8 @@ namespace CnG.Web.Services
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            Mapper.CreateMap<User, UserContract>()
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(user => user.Membership.UserName));
         }
 
         protected void Session_Start(object sender, EventArgs e)

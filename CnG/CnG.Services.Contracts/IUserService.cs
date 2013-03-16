@@ -1,4 +1,6 @@
-﻿using System.ServiceModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ServiceModel;
 using CnG.Services.Contracts.Dtos;
 
 namespace CnG.Services.Contracts
@@ -8,6 +10,15 @@ namespace CnG.Services.Contracts
     public interface IUserService
     {
         [OperationContract]
-        bool Authenticate(AuthenticationDto authentication);
+        bool Authenticate(string userName, string password);
+
+        [OperationContract]
+        Guid Create(UserContract userContract);
+
+        [OperationContract]
+        UserContract Get(Guid id);
+
+        [OperationContract]
+        IEnumerable<UserContract> GetUsers();
     }
 }

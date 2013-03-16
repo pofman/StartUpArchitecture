@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using AutoMapper;
 using CnG.Domain.Model;
 using CnG.Foundations.Persistence;
 using CnG.Services.Contracts;
@@ -17,9 +20,36 @@ namespace CnG.Web.Services
             _users = users;
         }
 
-        public bool Authenticate(AuthenticationDto authentication)
+        public bool Authenticate(string userName, string password)
         {
-            return _users.SingleOrDefault(x => x.Membership.Password == authentication.Password && x.Membership.UserName == authentication.UserName) != null;
+            return _users.SingleOrDefault(x => x.Membership.Password == password && x.Membership.UserName == userName) != null;
+        }
+
+        public Guid Create(UserContract userContract)
+        {
+            var user = new User
+                {
+                    FirstName = userContract.FirstName,
+                    LastName = userContract.LastName,
+                    Membership = new Membership
+                        {
+                            Password = userContract.Password,
+                            UserName = userContract.UserName
+                        }
+                };
+            _users.Put(user);
+
+            return user.Id;
+        }
+
+        public UserContract Get(Guid id)
+        {
+            return Mapper.Map<User, UserContract>(_users[id]);
+        }
+
+        public IEnumerable<UserContract> GetUsers()
+        {
+            return _users.Select(Mapper.Map<User, UserContract>);
         }
     }
 }

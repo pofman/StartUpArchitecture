@@ -8,7 +8,8 @@ namespace CnG.Domain.Model.Mappings.Contexts
         {
             context.GetDbSet<User>().Add(new User
                 {
-                    Name = "Martin",
+                    FirstName = "Martin",
+                    LastName = "Mendez",
                     Membership = new Membership
                         {
                             Password = "username",
