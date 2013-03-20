@@ -59,6 +59,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -75,6 +76,7 @@
     <Compile Include="Ioc\DependencyFactory.cs" />
     <Compile Include="Contexts\IExecutionContext.cs" />
     <Compile Include="Mvc\BaseController.cs" />
+    <Compile Include="Mvc\MvcDependencyResolver.cs" />
     <Compile Include="Persistence\EfRepository.cs" />
     <Compile Include="Persistence\EfUnitOfWork.cs" />
     <Compile Include="Persistence\IContextFactory.cs" />

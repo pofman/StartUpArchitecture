@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
+using System.Web.Http.Dispatcher;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using CnG.Foundations.Ioc;
+using CnG.Foundations.Mvc;
+using CnG.Foundations.Wcf;
+using Microsoft.Practices.Unity;
+using UnityConfiguration;
 
 namespace CnG.Web.Client
 {
@@ -16,9 +18,17 @@ namespace CnG.Web.Client
     {
         protected void Application_Start()
         {
+
+            DependencyFactory.Container.Configure(x => x.AddRegistry<MvcUnityRegistry>());
+            DependencyFactory.Container.RegisterType(typeof(IServiceInvoker<>), typeof(ServiceInovker<>));
+
+            DependencyResolver.SetResolver(new MvcDependencyResolver(DependencyResolver.Current));
+            GlobalConfiguration.Configuration.DependencyResolver = new MvcDependencyResolver(DependencyResolver.Current);
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
+            
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

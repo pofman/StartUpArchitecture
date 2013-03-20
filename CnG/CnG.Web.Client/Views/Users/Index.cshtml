@@ -1,0 +1,21 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<h2>Users</h2>
+@Html.ActionLink("Create", "Create", "Users")
+<div id="userscontainer">
+    <ul></ul>
+</div>
+@section scripts
+{
+    <script>
+        $.getJSON('@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "UsersApi", id = "GetUsers" })', function (users) {
+            $(users).each(function (i, item) {
+                $('#userscontainer').append('<li>' + item.FirstName + '-' + item.LastName + '</li>');
+            });
+        })
+    </script>
+}

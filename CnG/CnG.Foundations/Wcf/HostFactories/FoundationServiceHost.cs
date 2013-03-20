@@ -24,6 +24,7 @@ namespace CnG.Foundations.Wcf.HostFactories
         {
             Description.Behaviors.Add(new DependencyInjectionServiceBehavior());
 			Description.Behaviors.Add(new UnitOfWorkEndpointBehaviorAttribute());
+            Description.Behaviors.Find<ServiceBehaviorAttribute>().InstanceContextMode = InstanceContextMode.Single;
             base.OnOpen(timeout);
         }
     }
