@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace CnG.Web.Client
+namespace CnG.Web.Client.App_Start
 {
     public class FilterConfig
     {

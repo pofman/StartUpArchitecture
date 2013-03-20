@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
-namespace CnG.Web.Client
+namespace CnG.Web.Client.App_Start
 {
     public static class WebApiConfig
     {

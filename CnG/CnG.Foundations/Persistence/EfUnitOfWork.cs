@@ -2,40 +2,34 @@
 
 namespace CnG.Foundations.Persistence
 {
-	public class EfUnitOfWork : IUnitOfWork
-	{
-		private readonly IContextFactory _contextFactory;
-		private IPersistenceContext _persistenceContext;
+    public class EfUnitOfWork : IUnitOfWork
+    {
+        private readonly IContextFactory _contextFactory;
 
-		public EfUnitOfWork(IContextFactory contextFactory)
-		{
-			_contextFactory = contextFactory;
-		}
+        public EfUnitOfWork(IContextFactory contextFactory)
+        {
+            _contextFactory = contextFactory;
+        }
 
-		void IDisposable.Dispose()
-		{
-			DbContext.Dispose();
-		}
+        void IDisposable.Dispose()
+        {
+            DbContext.Dispose();
+        }
 
-		public IPersistenceContext DbContext
-		{
-			get
-			{
-				if (_persistenceContext == null)
-					_persistenceContext = _contextFactory.Create();
-				return _persistenceContext;
-			}
-		}
+        public IPersistenceContext DbContext
+        {
+            get { return _contextFactory.Current; }
+        }
 
-		public void Commit()
-		{
-			DbContext.InnerContext.ChangeTracker.DetectChanges();
-			DbContext.InnerContext.SaveChanges();
-		}
+        public void Commit()
+        {
+            DbContext.InnerContext.ChangeTracker.DetectChanges();
+            DbContext.InnerContext.SaveChanges();
+        }
 
-		public void RollBack()
-		{
+        public void RollBack()
+        {
 
-		}
-	}
+        }
+    }
 }

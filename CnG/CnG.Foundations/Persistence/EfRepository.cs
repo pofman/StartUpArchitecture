@@ -8,11 +8,11 @@ namespace CnG.Foundations.Persistence
 {
     public class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        private readonly IPersistenceContext _persistenceContext;
+        private readonly IContextFactory _contextFactory;
 
-        public EfRepository(IPersistenceContext persistenceContext)
+        public EfRepository(IContextFactory contextFactory)
         {
-            _persistenceContext = persistenceContext;
+            _contextFactory = contextFactory;
         }
 
         public IEnumerator<TEntity> GetEnumerator()
@@ -42,22 +42,22 @@ namespace CnG.Foundations.Persistence
 
         public void Put(TEntity entity)
         {
-            _persistenceContext.GetDbSet<TEntity>().Add(entity);
+            _contextFactory.Current.GetDbSet<TEntity>().Add(entity);
         }
 
         public TEntity this[object id]
         {
-            get { return _persistenceContext.GetDbSet<TEntity>().Find(id); }
+            get { return _contextFactory.Current.GetDbSet<TEntity>().Find(id); }
         }
 
         public void Remove(TEntity entity)
         {
-            _persistenceContext.GetDbSet<TEntity>().Remove(entity);
+            _contextFactory.Current.GetDbSet<TEntity>().Remove(entity);
         }
 
         protected IQueryable<TEntity> GetQueryable()
         {
-            return _persistenceContext.GetDbSet<TEntity>();
+            return _contextFactory.Current.GetDbSet<TEntity>();
         }
     }
 }

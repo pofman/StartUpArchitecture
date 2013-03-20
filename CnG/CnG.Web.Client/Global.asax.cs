@@ -1,11 +1,11 @@
 ﻿using System.Web.Http;
-using System.Web.Http.Dispatcher;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using CnG.Foundations.Ioc;
 using CnG.Foundations.Mvc;
 using CnG.Foundations.Wcf;
+using CnG.Web.Client.App_Start;
 using Microsoft.Practices.Unity;
 using UnityConfiguration;
 

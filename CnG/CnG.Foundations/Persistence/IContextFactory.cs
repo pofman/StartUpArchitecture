@@ -2,6 +2,6 @@
 {
     public interface IContextFactory
     {
-        IPersistenceContext Create();
+        IPersistenceContext Current { get; }
     }
 }
