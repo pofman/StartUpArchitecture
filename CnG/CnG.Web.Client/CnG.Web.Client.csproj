@@ -248,6 +248,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

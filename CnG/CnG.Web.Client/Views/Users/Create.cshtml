@@ -35,7 +35,7 @@
             Password: new ko.observable(''),
             save: function () {
                 $.ajax({
-                    url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "UsersApi", id = "Create" })',
+                    url: '@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "UsersApi", action = "Create" })',
                     type: "POST",
                     data: ko.toJSON(this),
                     dataType: "json",

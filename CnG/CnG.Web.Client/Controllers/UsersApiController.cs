@@ -22,6 +22,11 @@ namespace CnG.Web.Client.Controllers
             return _usersService.Invoke(x => x.GetUsers());
         }
 
+        public UserContract GetUser(Guid id)
+        {
+            return _usersService.Invoke(x => x.Get(id));
+        }
+
         [HttpPost]
         public object Create(UserContract userContract)
         {
@@ -42,7 +47,28 @@ namespace CnG.Web.Client.Controllers
                         message = ex.Message
                     };
             }
+        }
 
+        [HttpPost]
+        public object Update(UserContract userContract)
+        {
+            try
+            {
+                var userId = _usersService.Invoke(x => x.Update(userContract));
+                return new
+                {
+                    error = false,
+                    userId = userId
+                };
+            }
+            catch (Exception ex)
+            {
+                return new
+                {
+                    error = true,
+                    message = ex.Message
+                };
+            }
         }
     }
 }

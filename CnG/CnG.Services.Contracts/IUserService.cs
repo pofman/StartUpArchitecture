@@ -16,6 +16,9 @@ namespace CnG.Services.Contracts
         Guid Create(UserContract userContract);
 
         [OperationContract]
+        Guid Update(UserContract userContract);
+
+        [OperationContract]
         UserContract Get(Guid id);
 
         [OperationContract]

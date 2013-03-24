@@ -42,6 +42,16 @@ namespace CnG.Web.Services
             return user.Id;
         }
 
+        public Guid Update(UserContract userContract)
+        {
+            var user = _users[userContract.Id];
+            user.FirstName = userContract.FirstName;
+            user.LastName = userContract.LastName;
+            user.Membership.UserName = userContract.UserName;
+
+            return user.Id;
+        }
+
         public UserContract Get(Guid id)
         {
             return Mapper.Map<User, UserContract>(_users[id]);
