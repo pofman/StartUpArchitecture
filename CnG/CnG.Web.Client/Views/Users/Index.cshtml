@@ -13,10 +13,10 @@
 {
     <script>
         var editUrl = '@Url.Action("Update", "Users", new { id = string.Empty })/';
-        $.getJSON('@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "UsersApi", action = "GetUsers" })', function (users) {
-            $(users).each(function (i, item) {
+        $.getJSON('@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "UsersApi", action = "GetUsers" })', function(users) {
+            $(users).each(function(i, item) {
                 $('#userscontainer').append('<li>' + item.FirstName + '-' + item.LastName + '| <a href="' + editUrl + item.Id + '">Edit</a></li>');
             });
-        })
+        });
     </script>
 }
