@@ -9,12 +9,14 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <div id="ajaxLoader" class="ajax-loader"></div>
     @RenderBody()
-    
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/common")
     @RenderSection("scripts", required: false)
 </body>
 </html>

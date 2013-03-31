@@ -23,6 +23,7 @@ namespace CnG.Web.Client.App_Start
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include("~/Scripts/knockout-2.1.0.js"));
+            bundles.Add(new ScriptBundle("~/bundles/common").Include("~/Scripts/Common.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 

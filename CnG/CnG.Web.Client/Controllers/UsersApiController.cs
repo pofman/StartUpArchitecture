@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.Http;
 using CnG.Foundations.Mvc;
 using CnG.Foundations.Wcf;
@@ -30,45 +31,23 @@ namespace CnG.Web.Client.Controllers
         [HttpPost]
         public object Create(UserContract userContract)
         {
-            try
+            var userId = _usersService.Invoke(x => x.Create(userContract));
+            return new
             {
-                var userId = _usersService.Invoke(x => x.Create(userContract));
-                return new
-                {
-                    error = false,
-                    userId = userId
-                };
-            }
-            catch (Exception ex)
-            {
-                return new
-                    {
-                        error = true,
-                        message = ex.Message
-                    };
-            }
+                userId = userId
+            };
+
         }
 
         [HttpPost]
         public object Update(UserContract userContract)
         {
-            try
+            var userId = _usersService.Invoke(x => x.Update(userContract));
+            return new
             {
-                var userId = _usersService.Invoke(x => x.Update(userContract));
-                return new
-                {
-                    error = false,
-                    userId = userId
-                };
-            }
-            catch (Exception ex)
-            {
-                return new
-                {
-                    error = true,
-                    message = ex.Message
-                };
-            }
+                userId = userId
+            };
+
         }
     }
 }
