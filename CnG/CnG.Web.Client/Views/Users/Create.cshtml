@@ -3,31 +3,13 @@
 }
 
 <h2>Create user</h2>
-
-<form data-bind="submit: save">
-    <div>
-        <label for="firstName">First name:</label>
-        <input id="firstName" type="text" data-bind="value:FirstName" />
-    </div>
-    <div>
-        <label for="lastName">Last name:</label>
-        <input id="lastName" type="text" data-bind="value:LastName" />
-    </div>
-    <div>
-        <label for="userName">Username:</label>
-        <input id="userName" type="text" data-bind="value:UserName" />
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input id="password" type="password" data-bind="value:Password" />
-    </div>
-    <div>
-        <button type="submit">Save</button>
-    </div>
-</form>
+<div id="formContainer"></div>
 @section scripts
 {
+    <script type="text/javascript" src="~/Scripts/Users/form.js"></script>
     <script type="text/javascript">
+        $('#formContainer').append(users_form_template({ isUpdate: false }));
+
         var contact = {
             FirstName: new ko.observable(''),
             LastName: new ko.observable(''),
